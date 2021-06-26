@@ -3,11 +3,15 @@ import ChatContext from "../context/chat/ChatContext";
 import man from "./../assets/img/man.svg";
 import woman from "./../assets/img/woman.svg";
 const ChatBarItem = ({ data }) => {
-  const { chatActivo, selectChat, loadMesajes } = useContext(ChatContext);
+  const { chatActivo, selectChat, loadMesajes, handleOpenMenu, menu } =
+    useContext(ChatContext);
   const { online, userName, gender, uid } = data;
   const handleOnClick = () => {
     selectChat(uid);
     loadMesajes(uid);
+    setTimeout(() => {
+      handleOpenMenu(!menu);
+    }, 80);
   };
   return (
     <div

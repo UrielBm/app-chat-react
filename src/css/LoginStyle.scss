@@ -1,0 +1,132 @@
+$color1: #293b5f;
+$color2: #47597e;
+$color3: #dbe6fd;
+$color4: #b2ab8c;
+$font2: "Noto Sans", sans-serif;
+$font1: "Nunito", sans-serif;
+.wrapperGeneral {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $color3;
+  min-width: 100vw;
+  min-height: 100vh;
+  .wrapperForm {
+    width: 32rem;
+    text-align: center;
+    background-color: $color1;
+    padding: 3rem 1rem;
+    border-radius: 2rem;
+    box-shadow: 10px 6px 15px $color2;
+    .loginPage {
+      width: 100%;
+      .titlePage {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: $color3;
+      }
+      .form {
+        width: 100%;
+        color: $color3;
+        .wrapperInput {
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          &:not(:last-of-type) {
+            margin-bottom: 1rem;
+          }
+          .label {
+            font-size: 1.2rem;
+            font-weight: 400;
+            @media only screen and (max-width: 720px) {
+              text-align: start;
+              width: 100%;
+              font-size: 0.9rem;
+              margin-bottom: 0.6rem;
+            }
+          }
+          .input {
+            max-width: 340px;
+            border-radius: 0.45rem;
+            border: none;
+            outline: none;
+            padding: 0.3rem 1rem;
+            @media only screen and (max-width: 720px) {
+              width: 100%;
+            }
+          }
+          .select {
+            @extend .input;
+          }
+          @media only screen and (max-width: 720px) {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+          }
+        }
+        .wrapperLink {
+          width: 100%;
+          text-align: end;
+          .link {
+            text-decoration: none;
+            color: $color3;
+            font-weight: 300;
+            font-size: 0.93rem;
+            transition: color 0.4s ease-in-out;
+            &:hover {
+              color: $color4;
+              font-size: 1rem;
+            }
+          }
+        }
+        .wrapperActionButton {
+          width: 100%;
+          margin: 2rem 0 0 0;
+          .FormButton {
+            min-width: 15rem;
+            font-size: 1.35rem;
+            font-weight: 700;
+            padding: 0.3rem 1rem;
+            border-radius: 0.4rem;
+            border: none;
+            outline: none;
+            background-color: $color2;
+            color: $color3;
+            transition: background-color 0.5s ease-in-out,
+              color 0.4s ease-in-out, min-width 0.4s ease-in-out;
+            &:hover {
+              min-width: 16rem;
+              background-color: $color3;
+              color: $color1;
+            }
+            &:disabled {
+              background-color: $color1;
+              color: $color1;
+            }
+          }
+        }
+      }
+      .wrapperErrors {
+        text-align: start;
+        font-family: $font2;
+        width: 100%;
+        margin-bottom: 0.5rem;
+        p {
+          font-size: 0.83rem;
+          color: $color4;
+          font-weight: 700;
+        }
+        .errors {
+          font-size: 0.78rem;
+          color: $color4;
+          font-weight: 400;
+        }
+      }
+    }
+    @media only screen and (max-width: 720px) {
+      width: 19rem;
+    }
+  }
+}

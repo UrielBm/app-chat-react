@@ -1,0 +1,282 @@
+$color1: #293b5f;
+$color2: #47597e;
+$color3: #dbe6fd;
+$color4: #b2ab8c;
+$white: #ffffff;
+$font2: "Noto Sans", sans-serif;
+$font1: "Nunito", sans-serif;
+.wrapperChatPage {
+  display: flex;
+  .wrapperMobileHeader {
+    display: none;
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem 1rem;
+      .title {
+        color: $color2;
+        font-weight: 700;
+        font-size: 1.1rem;
+        display: flex;
+        align-items: center;
+        h1 {
+          margin-right: 0.5rem;
+        }
+      }
+      .logo {
+        width: 1.6rem;
+      }
+    }
+    @media only screen and(max-width: 720px) {
+      display: block;
+      position: fixed;
+      z-index: 10;
+      background-color: $white;
+      width: 100vw;
+    }
+  }
+  .wrapperUsers {
+    width: 25%;
+    border-right: 1px solid $color4;
+    min-height: 100vh;
+    @media only screen and(max-width: 720px) {
+      display: none;
+    }
+  }
+  .wrapperUsersMobile {
+    display: none;
+    @media only screen and(max-width: 720px) {
+      display: block;
+      background-color: $white;
+      position: fixed;
+      width: 60%;
+      min-height: 100vh;
+      border-right: 1px solid $color4;
+      z-index: 11;
+    }
+  }
+  .wrapperInboxPeople {
+    .wrapperHeader {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 1rem 2rem;
+      width: 100%;
+      border-bottom: 1px solid $color4;
+      .wrapperSubtitle {
+        font-family: $font2;
+        .subtitle {
+          color: $color2;
+          font-size: 1.3rem;
+          font-weight: 700;
+          @media only screen and(max-width: 720px) {
+            font-size: 0.94rem;
+          }
+        }
+      }
+      .wrapperActionButton {
+        .actionButton {
+          border: none;
+          background: none;
+          font-size: 1rem;
+          color: #751919;
+          outline: none;
+          font-weight: 700;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+    .wrapperListChats {
+      .text {
+        text-align: center;
+        font-size: 0.9rem;
+        margin-top: 0.5rem;
+      }
+      .wrapperChatUser {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        padding: 0.5rem 0;
+        &:hover {
+          cursor: pointer;
+        }
+        .wrapperImg {
+          display: flex;
+          width: 2.5rem;
+          height: 2.5rem;
+          .img {
+            width: 100%;
+          }
+        }
+        .wrapperInfo {
+          width: 40%;
+          .userName {
+            color: $color2;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+          }
+          .statusOnline {
+            color: #477953;
+            font-weight: 400;
+            font-size: 0.9rem;
+          }
+          .statusOffline {
+            color: #751919;
+            font-weight: 400;
+            font-size: 0.9rem;
+          }
+        }
+      }
+      .activo {
+        background-color: $color4;
+      }
+    }
+  }
+  .wrapperChat {
+    width: 100%;
+    min-height: 100vh;
+    .wrapperSelectChat {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 92vh;
+      background-color: $color3;
+      .text {
+        font-family: $font2;
+        color: $color2;
+        font-size: 2.5rem;
+        font-weight: 700;
+        @media only screen and(max-width: 720px) {
+          font-size: 1.5rem;
+          text-align: center;
+        }
+      }
+    }
+    @media only screen and(max-width: 720px) {
+      padding-top: 4rem;
+    }
+  }
+  @media only screen and(max-width: 720px) {
+    flex-direction: column;
+  }
+}
+.mesgs {
+  padding: 2rem 1rem 0 1.5rem;
+  width: 100%;
+  height: 92vh;
+  .msg_history {
+    height: 90%;
+    overflow-y: auto;
+    .incoming_msg {
+      display: flex;
+      width: 450px;
+      .wrapperImg {
+        width: 3.5rem;
+        .img {
+          width: 100%;
+        }
+        @media only screen and (max-width: 720px) {
+          width: 2rem;
+        }
+      }
+      .received_msg {
+        display: inline-block;
+        padding: 0 0 0 10px;
+        vertical-align: top;
+        width: 92%;
+
+        .received_withd_msg {
+          width: 57%;
+          p {
+            background: $color3 none repeat scroll 0 0;
+            border-radius: 0.5rem;
+            color: $color1;
+            font-size: 0.95rem;
+            margin: 0;
+            padding: 5px 10px 5px 12px;
+            width: 100%;
+          }
+          .time_date {
+            color: $color4;
+            display: block;
+            font-size: 0.7rem;
+            margin: 0.3rem 0 0;
+          }
+          @media only screen and (max-width: 720px) {
+            width: 80%;
+          }
+        }
+      }
+      @media only screen and (max-width: 720px) {
+        width: 320px;
+      }
+    }
+    .outgoing_msg {
+      overflow: hidden;
+      margin: 26px 0 26px;
+      .sent_msg {
+        float: right;
+        width: 450px;
+        p {
+          background: $color2 none repeat scroll 0 0;
+          border-radius: 0.5rem;
+          font-size: 0.95rem;
+          margin: 0;
+          color: $color3;
+          padding: 0.3rem 0.5rem 0.3rem 0.53rem;
+          width: 100%;
+        }
+        .time_date {
+          color: $color4;
+          display: block;
+          font-size: 0.7rem;
+          margin: 0.3rem 0 0;
+        }
+        @media only screen and (max-width: 720px) {
+          width: 300px;
+        }
+      }
+    }
+  }
+  .type_msg {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid $color4;
+    padding: 0.5rem 1rem;
+    .input_msg_write {
+      width: 45rem;
+      .write_msg {
+        width: 100%;
+        border: none;
+        border-radius: 0.7rem;
+        outline: none;
+        font-size: 0.8rem;
+      }
+    }
+    .wrapperButtonSend {
+      width: 8rem;
+      .actionButton {
+        width: 100%;
+        border: none;
+        border-radius: 0.6rem;
+        padding: 0.5rem 1rem;
+        background-color: $color1;
+        color: $color3;
+        font-size: 1rem;
+        font-weight: 400;
+        outline: none;
+      }
+    }
+  }
+  .noChat {
+    text-align: center;
+  }
+}

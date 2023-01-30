@@ -1,6 +1,6 @@
 import axios from "axios";
 
 const ClientAxios = axios.create({
-  baseURL: "https://api-chatsocket.herokuapp.com",
+  baseURL: process.env.REACT_APP_URL_API,
 });
 export default ClientAxios;

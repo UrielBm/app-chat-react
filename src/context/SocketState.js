@@ -9,7 +9,7 @@ const SocketState = (props) => {
   const { getUsers, getMensajes } = useContext(ChatContext);
   const { logged } = useContext(AuthContext);
   const { socket, online, connectSocket, disconnectSocket } = useSocket(
-    "https://api-chatsocket.herokuapp.com"
+    process.env.REACT_APP_URL_API
   );
   useEffect(() => {
     if (logged) {
